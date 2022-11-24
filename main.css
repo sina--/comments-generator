@@ -1,0 +1,63 @@
+html, body {
+	margin: 0;
+	display: flex;
+	height: 100%;
+	width: 100%;
+}
+
+.page {
+	display: flex;
+	height: 100%;
+	width: 100%;
+}
+
+.input {
+	background-color: #a9a9a9;
+	height: 100%;
+	width: 25%;
+}
+
+.output {
+	display: flex;
+	background-color: #f1f1f1;
+	height: 100%;
+	width: 75%;
+	justify-content: center;
+	align-items: center;
+}
+
+.panel {
+	padding: 20px;
+	box-sizing: border-box;
+	background-color: #000000;
+	border-radius: 4px;
+	width: 350px;
+	height: auto;
+}
+
+ul {
+	display: flex;
+	padding: 0px;
+	gap: 10px;
+	margin: 0px;
+}
+
+.comment-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.comment-header li {
+	list-style-type: none;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: rgb(171, 208, 57);
+	cursor: pointer;
+}
+
+.options {
+	color: white;
+	font-weight: 900;
+}
