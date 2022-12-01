@@ -15,7 +15,7 @@
 				<input type="text" id="time" name="time"><br>
 				<label for="content">Text Content:</label><br>
 				<input type="text" id="content" name="content"><br>
-				<input type="submit" value="submit">
+				<input type="submit" value="submit" onclick="submitComment(event)">
 			</form>
 		</div>
 		<div class="output">
@@ -50,8 +50,23 @@
 					</ul>
 					<div class="options">&#8942</div>
 				</div>
+				<div class="comments" id="comments-ul">
+					<div>
+						<div class="row">
+							<div class="prof"></div>
+							<div>
+								<h3>Saul Goodman</h3>
+							</div>
+							<div class="timestamp">4h</div>
+						</div>
+						<div class="comment-text">
+							Lorem Ipsum
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+	<script src="script.js"></script>
 </body>
 </html>
