@@ -7,35 +7,38 @@ function submitComment(event) {
 	let name = document.getElementById("name").value;
 	let time = document.getElementById("time").value;
 	let content = document.getElementById("content").value;
+	let profPic = document.getElementById("prof-pic-selection").value;
 	let id = Object.keys(data).length + 1;
 	console.log(data);
 	if (editMode === false) {
-		createComment(id, name, time, content);
+		createComment(id, name, time, content, profPic);
 	} else {
-		createComment(editMode, name, time, content);
+		createComment(editMode, name, time, content, profPic);
 	}
-	// console.log(data);
 }
 
-function createComment(id, name, time, content) {
-	// if (editMode != false) {
-	// 	let newDiv = document.getElementById(editMode);
-	// 	newDiv.innerHTML = `<h3><a href='#' onclick=editComment(${id})>${name}</a></h3>`;
-	// 	commentContainer.appendChild(newDiv);
-	// 	console.log(newDiv);
-	// } else {
-	// 	let newDiv = document.createElement("div");
-	// 	newDiv.setAttribute("id", id);
-	// 	newDiv.innerHTML = `<h3><a href='#' onclick=editComment(${id})>${name}</a></h3>`;
-	// 	commentContainer.appendChild(newDiv);
-	// }
-	data[id] = [name, time, content];
+function createComment(id, name, time, content, profPic) {
+	data[id] = [name, time, content, profPic];
 	document.getElementById("comments-ul").innerHTML = '';
 	for(let id in data) {
 		console.log("string", id, data[id]);
 		let newDiv = document.createElement("div");
 		newDiv.setAttribute("id", id);
-		newDiv.innerHTML = `<h3><a href='#' onclick=editComment(${id})>${data[id][0]}</a></h3>`;
+		newDiv.setAttribute("class", "wrapper");
+		newDiv.innerHTML = `
+						<div class="row">
+							<div class="col-1">
+								<img src="images/${data[id][3]}" class="prof">
+							</div>
+							<div class="col-2">
+								<h3><a href='#' onclick=editComment(${id})>${data[id][0]}</a></h3>
+							</div>
+							<div class="col-3"><p class="timestamp">${data[id][1]}</p></div>
+						</div>
+						<div class="row">
+							<div class="col-1"></div>
+							<div class="col-2"><p class="textcontent">${data[id][2]}</p></div>
+						</div>`;
 		commentContainer.appendChild(newDiv);
 	}
 	clearInput();

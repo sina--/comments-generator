@@ -4,20 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Orchids Comment Generator</title>
 	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
 </head>
 <body>
 	<div class="page">
-		<div class="input">
-			<form>
-				<label for="name">Name:</label><br>
-				<input type="text" id="name" name="name"><br>
-				<label for="time">Time:</label><br>
-				<input type="text" id="time" name="time"><br>
-				<label for="content">Text Content:</label><br>
-				<input type="text" id="content" name="content"><br>
-				<input type="submit" value="submit" onclick="submitComment(event)">
-			</form>
-		</div>
 		<div class="output">
 			<div class="panel">
 				<div class="comment-header">
@@ -51,20 +41,29 @@
 					<div class="options">&#8942</div>
 				</div>
 				<div class="comments" id="comments-ul">
-					<div id="wrapper">
-						<div class="row">
-							<div class="prof"></div>
-							<div>
-								<h3>Saul Goodman</h3>
-							</div>
-							<div class="timestamp">4h</div>
-						</div>
-						<div class="comment-text">
-							Lorem Ipsum
-						</div>
-					</div>
 				</div>
+				<input type="text" id="content" class="input-comment" placeholder="Type your comment">
 			</div>
+			<form class="form-content">
+				<input type="text" id="name" name="name" placeholder="User Name">
+				<input type="text" id="time" name="time" placeholder="Time Posted">
+				<select id="prof-pic-selection" name="prof-pic" placeholder="Profile Picture">
+					<option value="zari.png">Zari</option>
+					<option value="3DArtists.png">3D Artist</option>
+					<option value="Designers.png">Designer</option>
+					<option value="Manufacturers.png">Manufacturer</option>
+					<option value="Marketing.png">Marketer</option>
+					<option value="ProductManagers.png">Product Manager</option>
+					<option value="Retail.png">Retail</option>
+					<option value="Sales.png">Sales</option>
+					<option value="sina.png">Sina</option>
+				</select>
+				<div class="button-box">
+					<input type="submit" value="post" onclick="submitComment(event)">
+					<input type="submit" value="clear" onclick="clearInput()">
+					<input type="submit" value="download"> 
+				</div>
+			</form>
 		</div>
 	</div>
 	<script src="script.js"></script>

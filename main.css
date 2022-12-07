@@ -1,8 +1,11 @@
 html, body {
-	margin: 0;
+	margin: 0px;
 	display: flex;
 	height: 100%;
 	width: 100%;
+	background-color: #212026;
+	color: #ffffff;
+	font-family: 'Nunito';
 }
 
 li {
@@ -11,25 +14,23 @@ li {
 
 .page {
 	display: flex;
+	flex-direction: column;
 	height: 100%;
 	width: 100%;
 }
 
-.input {
-	background-color: #a9a9a9;
-	height: 100%;
-	width: 25%;
-}
 .output {
 	display: flex;
-	background-color: #f1f1f1;
 	height: 100%;
-	width: 75%;
+	width: 100%;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 }
 
 .panel {
+	display: flex;
+	flex-direction: column;
 	padding: 20px;
 	box-sizing: border-box;
 	background-color: #000000;
@@ -49,25 +50,17 @@ ul {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding-bottom: 10px;
 }
 
 .comment-header li {
 	list-style-type: none;
+	margin-right: 5px;
 	width: 10px;
 	height: 10px;
 	border-radius: 50%;
 	background-color: rgb(171, 208, 57);
 	cursor: pointer;
-}
-
-.row {
-	display: flex;
-	color: white;
-	align-items: center;
-	flex-direction: row;
-	justify-content: space-around;
-	margin-left: -15px;
-	margin-right: -15px;
 }
 
 .timestamp {
@@ -90,11 +83,46 @@ ul {
 .comments {
 	display: flex;
 	color: white;
-	align-items: center;
+	align-items: stretch;
 	flex-direction: column;
 	justify-content: space-around;
-	margin-left: -15px;
-	margin-right: -15px;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.row {
+	width: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-content: space-around;
+}
+
+.col-1 {
+	width: 55px;
+}
+
+.col-2 {
+	display: flex;
+	width: 100%;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.col-3 {
+	display: flex;
+	width: 80px;
+}
+
+.timestamp {
+	color: #abd039;
+}
+
+.textcontent {
+	margin-top: -15px;
 }
 
 h3 {
@@ -105,4 +133,56 @@ h3 {
 h3, a {
 	color: white;
 	text-decoration: none;
+}
+
+input[type=text] {
+	color: white;
+	font-size: 1.05em;
+	height: 42px;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	background-color: #00000000;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.form-content {
+	display: flex;
+	flex-direction: column;
+	width: 350px;
+	margin: 10px;
+	gap: 10px;
+}
+
+.form-content input[type=text] {
+	margin: 0px;
+}
+
+select, input[type=submit] {
+	color: white;
+	background-color: #212026;
+	font-size: 1.05em;
+	height: 42px;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	background-color: #00000000;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+option {
+	background-color: #212026;
+}
+
+.button-box {
+	display: flex;
+	justify-content: space-between;
+	flex: 1 1 0;
+	gap: 10px;
+}
+
+.button-box input[type=submit] {
+	width: 33%;
 }
