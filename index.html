@@ -5,11 +5,12 @@
 	<title>Orchids Comment Generator</title>
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 </head>
 <body>
 	<div class="page">
 		<div class="output">
-			<div class="panel">
+			<div class="panel" id="htmltoimage">
 				<div class="comment-header">
 					<ul>
 						<li>
@@ -19,30 +20,50 @@
 						</li>
 						<li>
 							<div>
-								<p></p>
+								<p style="background-color: #08CFE8"></p>
 							</div>
 						</li>
 						<li>
 							<div>
-								<p></p>
+								<p style="background-color: #D62C1A"></p>
 							</div>
 						</li>
 						<li>
 							<div>
-								<p></p>
+								<p style="background-color: #E21E79"></p>
 							</div>
 						</li>
 						<li>
 							<div>
-								<p></p>
+								<p style="background-color: #E57A00"></p>
 							</div>
 						</li>
 					</ul>
 					<div class="options">&#8942</div>
 				</div>
 				<div class="comments" id="comments-ul">
+					<div class="row">
+						<div class="col-1">
+							<img src="images/zari.png" class="prof">
+						</div>
+						<div class="col-2">
+							<h3>Zari Wolper</h3>
+						</div>
+						<div class="col-3"><p class="timestamp">55m</p></div>
+					</div>
+					<div class="row">
+						<div class="col-1"></div>
+						<div class="col-2"><p class="textcontent">
+							Hey, now, you're an all-star, get your game on, go play.
+							Hey, now, you're a rock star, get the show on, get paid.
+							And all that glitters is gold.
+							Only shooting stars break the mold.
+						</p></div>
+					</div>
 				</div>
-				<input type="text" id="content" class="input-comment" placeholder="Type your comment">
+				<div class="panel-comment-reply">
+					<p contenteditable="true" id="content" class="input-comment" placeholder="Type your comment"></textarea>
+				</div>
 			</div>
 			<form class="form-content">
 				<input type="text" id="name" name="name" placeholder="User Name">
@@ -61,7 +82,7 @@
 				<div class="button-box">
 					<input type="submit" value="post" onclick="submitComment(event)">
 					<input type="submit" value="clear" onclick="clearInput()">
-					<input type="submit" value="download"> 
+					<input type="submit" value="download" onclick="downloadimage(event)"> 
 				</div>
 			</form>
 		</div>

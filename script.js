@@ -6,7 +6,7 @@ function submitComment(event) {
 	event.preventDefault();
 	let name = document.getElementById("name").value;
 	let time = document.getElementById("time").value;
-	let content = document.getElementById("content").value;
+	let content = document.getElementById("content").textContent;
 	let profPic = document.getElementById("prof-pic-selection").value;
 	let id = Object.keys(data).length + 1;
 	console.log(data);
@@ -59,5 +59,21 @@ function editComment(id) {
 function clearInput() {
 	document.getElementById("name").value = '';
 	document.getElementById("time").value = '';
-	document.getElementById("content").value = '';
+	document.getElementById("content").textContent = '';
+}
+
+function downloadimage() {
+	event.preventDefault();
+    /*var container = document.getElementById("image-wrap");*/ /*specific element on page*/
+    var container = document.getElementById("htmltoimage");; /* full page */
+    html2canvas(container, { allowTaint: true }).then(function (canvas) {
+
+	console.log(container);
+        var link = document.createElement("a");
+        document.body.appendChild(link);
+        link.download = "html_image.png";
+        link.href = canvas.toDataURL("image/png");
+        link.target = '_blank';
+        link.click();
+    });
 }

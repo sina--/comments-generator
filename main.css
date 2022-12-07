@@ -35,6 +35,7 @@ li {
 	box-sizing: border-box;
 	background-color: #000000;
 	border-radius: 4px;
+	border: 1px solid black;
 	width: 350px;
 	height: auto;
 }
@@ -53,7 +54,8 @@ ul {
 	padding-bottom: 10px;
 }
 
-.comment-header li {
+.comment-header p {
+	margin: 0px;
 	list-style-type: none;
 	margin-right: 5px;
 	width: 10px;
@@ -135,6 +137,11 @@ h3, a {
 	text-decoration: none;
 }
 
+.panel-comment-reply {
+	display: flex;
+	border-bottom: 1px solid #212026;
+}
+
 input[type=text] {
 	color: white;
 	font-size: 1.05em;
@@ -148,16 +155,35 @@ input[type=text] {
 	padding-right: 10px;
 }
 
+.input-comment {
+	font-family: "Nunito";
+	width: 100%;
+	min-height: 20px;
+	color: #ffffff;
+	font-size: 1.05em;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	background-color: #00000000;
+	padding: 10px;
+}
+
+.input-comment[placeholder]:empty:before {
+	content: attr(placeholder);
+	color: #212026;
+}
+
 .form-content {
 	display: flex;
 	flex-direction: column;
 	width: 350px;
 	margin: 10px;
-	gap: 10px;
+	background-color: #000000;
+	border-radius: 4px;
 }
 
 .form-content input[type=text] {
-	margin: 0px;
+	margin: 10px;
+	margin-bottom: 0px;
 }
 
 select, input[type=submit] {
@@ -170,6 +196,8 @@ select, input[type=submit] {
 	background-color: #00000000;
 	padding-left: 10px;
 	padding-right: 10px;
+	margin: 10px;
+	margin-bottom: 0px;
 }
 
 option {
@@ -181,8 +209,10 @@ option {
 	justify-content: space-between;
 	flex: 1 1 0;
 	gap: 10px;
+	margin: 10px;
 }
 
 .button-box input[type=submit] {
 	width: 33%;
+	margin: 0px;
 }
