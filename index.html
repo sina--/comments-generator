@@ -7,44 +7,20 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 </head>
-<body>
+<body onload="init()">
 	<div class="page">
 		<div class="output">
-			<div class="panel" id="htmltoimage">
+			<div class="wrapper" id="htmltoimage">
+			<div class="panel">
 				<div class="comment-header">
-					<ul>
-						<li>
-							<div>
-								<p></p>
-							</div>
-						</li>
-						<li>
-							<div>
-								<p style="background-color: #08CFE8"></p>
-							</div>
-						</li>
-						<li>
-							<div>
-								<p style="background-color: #D62C1A"></p>
-							</div>
-						</li>
-						<li>
-							<div>
-								<p style="background-color: #E21E79"></p>
-							</div>
-						</li>
-						<li>
-							<div>
-								<p style="background-color: #E57A00"></p>
-							</div>
-						</li>
+					<ul id="comment-colors">
 					</ul>
 					<div class="options">&#8942</div>
 				</div>
 				<div class="comments" id="comments-ul">
 					<div class="row">
 						<div class="col-1">
-							<img src="images/zari.png" class="prof">
+							<img alt="" src="images/zari.png" class="prof">
 						</div>
 						<div class="col-2">
 							<h3>Zari Wolper</h3>
@@ -64,6 +40,7 @@
 				<div class="panel-comment-reply">
 					<p contenteditable="true" id="content" class="input-comment" placeholder="Type your comment"></textarea>
 				</div>
+			</div>
 			</div>
 			<form class="form-content">
 				<input type="text" id="name" name="name" placeholder="User Name">
@@ -86,6 +63,7 @@
 				</div>
 			</form>
 		</div>
+		<img id="image" src="images/html_image.png" style="max-width: 400px; margin-left: auto; margin-right: auto; display: block;">
 	</div>
 	<script src="script.js"></script>
 </body>

@@ -1,6 +1,13 @@
 let data = {};
 let commentContainer = document.getElementById("comments-ul");
+let commentColors = document.getElementById("comment-colors");
 let editMode = false;
+let colors = {	green : "#ABD039",
+				blue : "#08CFE8",
+				red : "#D62C1A",
+				pink : "#E21E79",
+				orange : "#E57A00",
+			};
 
 function submitComment(event) {
 	event.preventDefault();
@@ -53,7 +60,7 @@ function editComment(id) {
 	let content = document.getElementById("content");
 	name.value = data[id][0];
 	time.value = data[id][1];
-	content.value = data[id][2];
+	content.textContent = data[id][2];
 }
 
 function clearInput() {
@@ -62,14 +69,13 @@ function clearInput() {
 	document.getElementById("content").textContent = '';
 }
 
-function downloadimage() {
+function downloadimage(event) {
 	event.preventDefault();
     /*var container = document.getElementById("image-wrap");*/ /*specific element on page*/
     var container = document.getElementById("htmltoimage");; /* full page */
-    html2canvas(container, { allowTaint: true }).then(function (canvas) {
+    html2canvas(container, { allowTaint: true, backgroundColor: null }).then(function (canvas) {
 
-	console.log(container);
-        var link = document.createElement("a");
+		var link = document.createElement("a");
         document.body.appendChild(link);
         link.download = "html_image.png";
         link.href = canvas.toDataURL("image/png");
@@ -77,3 +83,35 @@ function downloadimage() {
         link.click();
     });
 }
+
+function selectColor(color) {
+	// console.log(color);
+	for (const key in colors) {
+	if (key === color) {
+	document.getElementById(color).setAttribute("class", "selected");
+	document.getElementById(color).style.borderColor = colors[color];
+	} else {
+	document.getElementById(key).setAttribute("class", "normal");
+	document.getElementById(key).style.borderColor = "transparent";
+
+		
+	}	
+	
+	}
+
+
+}
+
+function init() {
+	console.log("Page loaded");
+	for (const color in colors) {
+		let colorElement = document.createElement(`li`);
+		colorElement.setAttribute("id", color);
+		colorElement.setAttribute("class", "normal");
+		colorElement.innerHTML = `<div"><a href="#" onclick="selectColor('${color}')"><p style="background-color: ${colors[color]}"></p></a></div></li>`
+		commentColors.appendChild(colorElement);
+	}
+	selectColor('green');
+
+}
+
